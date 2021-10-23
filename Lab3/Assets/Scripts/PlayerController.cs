@@ -22,5 +22,14 @@ public class PlayerController : MonoBehaviour
 
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
         playerRb.AddForce(Vector3.forward * speed * verticalInput);
+
+        if (this.transform.position.z >= 8.5)
+        {
+            transform.position = new Vector3(this.transform.position.x, 0.5f, -4f);
+        }
+        else if (this.transform.position.z <= -4)
+        {
+            transform.position = new Vector3(this.transform.position.x, 0.5f, 8.5f);
+        }
     }
 }
